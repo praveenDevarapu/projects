@@ -1,0 +1,6 @@
+FROM openjdk:8
+LABEL author="ITasCode"
+LABEL Org="DevTeam"
+RUN wget https://mybucket154.s3.ap-south-1.amazonaws.com/spring-petclinic-2.4.2.jar
+EXPOSE 8080
+CMD [ "java", "-jar", "spring-petclinic-" ]
