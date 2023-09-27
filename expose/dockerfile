@@ -1,6 +1,14 @@
-FROM openjdk:8
+#Use the official OpenJDK 17 image
+FROM OpenJDK:17
+
 LABEL author="ITasCode"
 LABEL Org="DevTeam"
-RUN wget https://mybucket154.s3.ap-south-1.amazonaws.com/spring-petclinic-2.4.2.jar
+
+# Download the Spring PetClinic JAR file
+RUN curl -o spring-petclinic-2.4.2.jar https://springjar-bucket.s3.amazonaws.com/spring-petclinic-2.4.2.jar
+
+# Expose port 8080
 EXPOSE 8080
-CMD [ "java", "-jar", "spring-petclinic-" ]
+
+# Run the Spring PetClinic application
+CMD [ "java", "-jar", "spring-petclinic-2.4.2.jar" ]
