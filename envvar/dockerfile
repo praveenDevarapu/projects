@@ -1,0 +1,8 @@
+FROM openjdk:17
+LABEL author="DevSecOps"
+LABEL Org="ITasCode"
+ARG download_location="https://springjar-bucket.s3.amazonaws.com/spring-petclinic-2.4.2.jar"
+ENV file_location="spring-petclinic.jar"
+ADD $(download_location) $(file_location)
+EXPOSE 8080
+CMD java-jar $(file_location)
