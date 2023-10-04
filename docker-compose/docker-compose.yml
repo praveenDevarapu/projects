@@ -8,3 +8,5 @@ services:
     image: postgres
     environment:
       - POSTGRES_PASSWORD=composedocker
+
+#this file is used for installation of nginx and postgres sql...
